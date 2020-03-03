@@ -1,10 +1,19 @@
-const  express = require('express')
+const express = require('express')
+const path = require('path')
 
 const app = express()
 const port = 3000
+const publicDirectoryPath = path.join(__dirname, '../public')
 
-const doseParacetamol = 20 // mg/Kg
-const concBenURon = 40 // mg/mL
+const router = express.Router();
+
+// Home page route.
+router.get('/', function (req, res) {
+  console.log(req.body.peso-crianca);
+})
+
+app.use(express.static(publicDirectoryPath))
+
 
 const calcDoseParacetamol = (peso) => {
     return peso * doseParacetamol
