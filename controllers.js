@@ -1,22 +1,22 @@
-let doseCerta = 0;
+const { calculoDose } = require('./model')
+let doseCerta = [];
+let principioAtivo = '';
 
 exports.getIndex = (req, res, next) => {
     res.render('index');
 };
 
 
-exports.calcularDose = (req, res, next) => {
+exports.calculoDose = (req, res, next) => {
     const pesoCrianca = req.body.pesoCrianca;
-    const principioAtivo = req.body.principioAtivo;
-  
-    if (principioAtivo.toLowerCase() === 'paracetamol') {
-      doseCerta = pesoCrianca * 20;
-      console.log('Dose certa: ' + doseCerta + ' mg de 8 em 8 horas');
-    }
+    principioAtivo = req.body.principioAtivo;
+    doseCerta = calculoDose(principioAtivo, pesoCrianca);
     res.redirect('/resultados');
-     
+    
   };
 
 exports.getResultados = (req, res, next) => {
-    res.render('resultados', { doseCerta });
+    doseMin = doseCerta[0];
+    doseMax = doseCerta[1];
+    res.render('resultados', { doseMin, doseMax, principioAtivo });
 };

@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', controllers.getIndex);
 
-app.post('/submit', controllers.calcularDose);
+app.post('/submit', controllers.calculoDose);
 
 app.get('/resultados', controllers.getResultados);
 
