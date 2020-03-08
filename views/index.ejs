@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <form method="POST" action="/submit">
+    <h1>Calculadora de posologias</h1>
+    <form class="form_centered"method="POST" action="/submit">
         <label for="peso-crianca">Peso da criança</label>
         <input type="text" name="pesoCrianca">
         <label for="principio-ativo">Princípio ativo</label>
         <input type="text" name="principioAtivo">
-        <input type="submit" />
+        <button type="submit">Calcular</button>
     </form>
+    
     
 </body>
 </html>
