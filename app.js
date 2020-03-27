@@ -11,9 +11,11 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', controllers.getIndex);
+
+app.post('/addDrug', controllers.addDrug);
 
 app.post('/submit', controllers.calculoDose);
 
