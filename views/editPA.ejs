@@ -1,0 +1,28 @@
+<%- include('includes/head.ejs') %>
+    <title>Editar Princípio Ativo</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Princípio Ativo</h1>
+        <%- include('includes/navigation.ejs') %>
+        <form action="<%='/editPA/' + pAtivo %>" method="POST">
+            <label for="nome">Princípio Ativo</label>
+            <input type="text" name="pAtivo" value="<%= pAtivo %>">
+            <% for (dose in listaDoses) { %>
+                <label for="dose">Concentração:</label>
+                <input type="number" name="dose" value="<%= dose %>">
+                <label for="doseMax">Dose máxima:</label>
+                <input type="number" name="doseMax" value="<%= dose[1] %>">
+                <label for="doseMin">Dose mínima:</label>
+                <input type="number" name="doseMin" value="<%= dose[0] %>">
+                <br><br>
+                <button type="submit">Gravar</button>
+            
+                
+            <% } %>
+        </form>
+    </div>
+
+    
+</body>
+</html>

@@ -22,7 +22,11 @@ const getListaPrincipiosAtivos = () => {
 }
 
 const getListaDoses = (principioAtivo) => {
-    return Object.keys(medicamentosDosesRecomendadas[principioAtivo])
+    return Object.keys(medicamentosDosesRecomendadas[principioAtivo]);
+}
+
+const updatePrincipioAtivo = (pAtivo, conc, arr) => {
+    medicamentosDosesRecomendadas[pAtivo][conc] = arr; 
 }
 
 
@@ -34,27 +38,18 @@ const calculoDose = (principioAtivo, pesoCrianca, dose) => {
     return [doseMin, doseMax];
 };
 
-const selectDose = () => {
-    let paSelector = document.getElementById('paSelector');
-    let doseSelector = document.getElementById('doseSelector');
-    paSelected = paSelector.value;
-    const listaDoses = getListaDoses(paSelected);
-    let length = doseSelector.options.length;
-    if (length > 0) {
-        for (i = length - 1; i >= 0; i--) {
-            doseSelector.remove(i);
-        }
-    }
-    listaDoses.forEach(dose => {
-        let option = document.createElement('option');
-        option.text = dose;
-        doseSelector.add(option);
-    });
+const selectDose = function() {
+    console.log('funciona!')
+    // listaDoses = getListaDoses(principioAtivo);
+    // return listaDoses;
+    
 };
 
 module.exports = { 
     calculoDose,
     getListaPrincipiosAtivos,
     getListaDoses,
-    selectDose
+    selectDose,
+    updatePrincipioAtivo,
+    medicamentosDosesRecomendadas
 };

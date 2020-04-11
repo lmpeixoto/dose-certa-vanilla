@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<%- include('includes/head.ejs') %>
+    <title>Resultados</title>
 </head>
 <body>
-    <div>
+    <div class="container">
+        <h1>Resultados</h1>
+
+        <%- include('includes/navigation.ejs') %>
         <h1><%= principioAtivo %> (<%= dose %> mg/ml)</h1>
         <p>Dose máxima: <%= doseMax/dose %> ml (<%= doseMax %> mg) de 8/8 horas</p>
         <p>Dose mínima: <%= doseMin/dose %> ml (<%= doseMin %> mg) de 8/8 horas</p>

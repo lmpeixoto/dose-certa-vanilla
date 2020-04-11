@@ -15,11 +15,21 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', controllers.getIndex);
 
-app.post('/addDrug', controllers.addDrug);
+app.get('/selectEditPA', controllers.getSelectEditPA);
 
-app.post('/submit', controllers.calculoDose);
+app.post('/selectEditPA', controllers.postSelectEditPA);
+
+app.get('/editPA', controllers.getEditPA);
+
+app.post('/editPA', controllers.postEditPA);
+
+app.post('/dose', controllers.postDose);
+
+app.post('/resultados', controllers.calculoDose);
 
 app.get('/resultados', controllers.getResultados);
+
+
 
 
 

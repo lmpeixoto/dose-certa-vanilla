@@ -1,42 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('includes/head.ejs') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script type="text/javascript" src="js/wqmain.js">
-    </script>
-</head>
 
 <body>
-    <h1>Calculadora de posologias</h1>
-    <hr/>
-    <a href="addDrug">Adicionar SA</a>
-    <a href="removeDrug">Remover SA</a>
-    <hr/>
-    <form class="form_centered" method="POST" action="/submit" id="formEscolha">
-        <label for="peso-crianca">Peso da criança</label>
-        <input type="text" name="pesoCrianca" placeholder="Peso em Kg">
-        <label for="principio-ativo">Princípio ativo</label>
-        <select name="escolherPrincipioAtivo" id="paSelector" onchange="<%= selectDose() %>">
-            <% listaPrincipiosAtivos.forEach(pAtivo => { %>
-                <option><%= pAtivo %></option>
-            <% }) %>
-        </select>
-        <select name="escolherDose" id="doseSelector">
-            <% listaDoses.forEach(dose => { %>
-                <option><%= dose %></option>
-            <% }) %>
-        </select>
-        <p>Calcula a dose para crianças até aos 12 anos de idade com peso igual ou inferior a 40 Kg.</p>
-
-
-        <button type="submit">Calcular</button>
-    </form>
     
+    <div class="container">
+        <hr />
+        <h1>Calculadora de posologias</h1>
+        <%- include('includes/navigation.ejs') %>
+        
 
+
+        <form class="form_centered" method="POST" action="/dose" id="formEscolha">
+            <label for="peso-crianca">Peso da criança</label>
+            <input type="text" name="pesoCrianca" placeholder="Peso em Kg">
+            <label for="paSelector">Princípio ativo</label>
+            <select id="paSelector" name="principioAtivo">
+                <% listaPrincipiosAtivos.forEach(pAtivo => { %>
+                <option><%= pAtivo %></option>
+                <% }) %>
+            </select>
+
+
+            <p>Calcula a dose para crianças até aos 12 anos de idade com peso igual ou inferior a 40 Kg.</p>
+
+
+            <button type="submit">Continuar</button>
+        </form>
+
+
+    </div>
 </body>
 
 </html>

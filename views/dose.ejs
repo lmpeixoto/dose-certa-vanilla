@@ -1,0 +1,27 @@
+<%- include('includes/head.ejs') %>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculadora de posologias</h1>
+        <%- include('includes/navigation.ejs') %>
+        <form class="form_centered" method="POST" action="/resultados" id="formEscolha">
+            <label for="doseSelector">Dose/Concentração</label>
+            <select id="doseSelector" name="dose">
+                <% listaDoses.forEach(dose => { %>
+                <option><%= dose %></option>
+                <% }) %>
+            </select>
+
+
+            <p>Calcula a dose para crianças até aos 12 anos de idade com peso igual ou inferior a 40 Kg.</p>
+
+
+            <button type="submit">Calcular</button>
+        </form>
+
+
+    </div>
+</body>
+
+</html>
