@@ -1,14 +1,27 @@
-<%- include('includes/head.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/main-styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/resultados-styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+        integrity="sha256-ECB9bbROLGm8wOoEbHcHRxlHgzGqYpDtNTgDTyDz0wg=" crossorigin="anonymous" />
+    
+</head>
     <title>Resultados</title>
 </head>
 <body>
     <div class="container">
-        <h1>Resultados</h1>
+        <h1 class="menu-title">Resultados</h1>
 
         <%- include('includes/navigation.ejs') %>
-        <h1><%= principioAtivo %> (<%= dose %> mg/ml)</h1>
-        <p>Dose máxima: <%= doseMax/dose %> ml (<%= doseMax %> mg) de 8/8 horas</p>
-        <p>Dose mínima: <%= doseMin/dose %> ml (<%= doseMin %> mg) de 8/8 horas</p>
+        <h1 class="pAtivo-name"><%= principioAtivo %></h1>
+        <h2 class="conc"> (<%= dose %> mg/ml)</h2>
+        <h3>Dose máxima: <%= doseMax/dose %> ml (<%= doseMax %> mg) de 8/8 horas</h3>
+        <h3>Dose mínima: <%= doseMin/dose %> ml (<%= doseMin %> mg) de 8/8 horas</h3>
     </div>
 
 </body>

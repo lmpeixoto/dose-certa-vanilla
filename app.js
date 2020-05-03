@@ -10,20 +10,20 @@ const port = 3000;
 app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
-
+7
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', controllers.getIndex);
 
-app.get('/selectEditPA', controllers.getSelectEditPA);
-
-app.post('/selectEditPA', controllers.postSelectEditPA);
+app.get('/medicamentos', controllers.getMedicamentos);
 
 app.get('/editPA', controllers.getEditPA);
 
-app.post('/editPA', controllers.postEditPA);
+app.post('/editPA/:type', controllers.postEditPA);
 
-app.post('/dose', controllers.postDose);
+app.get('/addDrug', controllers.getAddDrug);
+
+app.post('/addDrug', controllers.postAddDrug);
 
 app.post('/resultados', controllers.calculoDose);
 

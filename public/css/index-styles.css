@@ -1,0 +1,30 @@
+.form-centered-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    
+    
+}
+
+#formEscolha {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    
+    
+    
+}
+
+#formEscolha input,
+#formEscolha select {
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    text-align-last: center;
+}
+
+#
+
+
+

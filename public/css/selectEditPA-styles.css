@@ -1,0 +1,14 @@
+.form-centered {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin: 3rem 18rem 3rem 18rem;
+    
+}
+
+.form-centered select {
+    text-align-last: center;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+}

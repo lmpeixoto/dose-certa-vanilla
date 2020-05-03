@@ -1,0 +1,29 @@
+{
+  "name": "dose-certa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "prettier": "2.0.5"
+  },
+  "scripts": {
+    "start": "nodemon app.js -e ejs,js,json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmpeixoto/dose-certa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lmpeixoto/dose-certa/issues"
+  },
+  "homepage": "https://github.com/lmpeixoto/dose-certa#readme"
+}

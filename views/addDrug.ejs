@@ -1,14 +1,25 @@
-<%- include('includes/head.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/main-styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+        integrity="sha256-ECB9bbROLGm8wOoEbHcHRxlHgzGqYpDtNTgDTyDz0wg=" crossorigin="anonymous" />
+    
+</head>
     <title>Adicionar Substância Ativa</title>
 </head>
 <body>
 
-    <form method="POST" action="/save" id="saveDrug">
-        <label for="nameDrug">Nome</label>
-        <input type="text" name="nameDrug">
-        
-    
+    <form method="POST" action="" id="saveDrug">
+        <label for="nameDrug">Substância Ativa</label>
+        <input type="text" name="nameDrug" id="nameDrug">
+        <button id="pa-add-button" type="button">Adicionar</button>
+        <div class="form-add-container"></div>
     </form>
-    
+<script src="js/addDrug.js"></script>
 </body>
 </html>

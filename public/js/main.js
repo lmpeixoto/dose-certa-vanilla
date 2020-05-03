@@ -1,40 +1,42 @@
-const medicamentosDosesRecomendadas = {
-    "paracetamol": {
-        40: [10, 20]
-    },
-
-    "ibuprofeno": {
-        20: [20, 30],
-        40: [20, 30]
-    }
-};
-
-const getListaPrincipiosAtivos = () => {
-    return Object.keys(medicamentosDosesRecomendadas);
+const fetchMedicamentosDosesRecomendadas = async () => {
+    let response = await fetch('/medicamentos');
+    let data = await response.json();
+    return data;
 }
 
-const getListaDoses = (principioAtivo) => {
-    return Object.keys(medicamentosDosesRecomendadas[principioAtivo])
-}
+const medicamentosDosesRecomendadas = fetchMedicamentosDosesRecomendadas()
+
+const paSelector = document.getElementById('paSelector')
+const doseSelector = document.getElementById('doseSelector');
 
 
-
-window.onload = function () {
-    const paSelector = document.getElementById('paSelector')
-    const doseSelector = document.getElementById('doseSelector');
-    const listaPrincipiosAtivos = getListaPrincipiosAtivos();
+function populatePA(med) {
+    const listaPrincipiosAtivos = Object.keys(med);
+    console.log(listaPrincipiosAtivos);
     listaPrincipiosAtivos.forEach(principioAtivo => {
-        let option = document.createElement('option');
-        option.value = principioAtivo;
-        option.text = principioAtivo;
-        paSelector.add(option);
-    });
+    let option = document.createElement('option');
+    option.value = principioAtivo;
+    option.text = principioAtivo;
+    paSelector.add(option);
+});
+    selectDose(med);
+
 }
 
 
-function selectDose() {
+medicamentosDosesRecomendadas.then(result => populatePA(result));
+
+paSelector.addEventListener('change', changeDose);
+
+function changeDose() {
+    medicamentosDosesRecomendadas.then(result => selectDose(result));
+}
+
+
+function selectDose(meds) {
     paSelected = paSelector.value
-    const listaDoses = getListaDoses(paSelected)
+    const listaDoses = Object.keys(meds[paSelected])
+    console.log(listaDoses)
     let length = doseSelector.options.length;
     if (length > 0) {
         for (i = length - 1; i >= 0; i--) {
@@ -48,3 +50,4 @@ function selectDose() {
     });
 
 }
+

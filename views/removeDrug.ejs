@@ -15,27 +15,11 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="menu-title">Editar Princípio Ativo</h1>
+        <h1 class="menu-title">Remover Princípio Ativo</h1>
         <%- include('includes/navigation.ejs') %>
         <div class="pAtivo-container">
-            <form action="#" method="POST" class="pAtivo-form" id="pAtivo-form">
+            <form action="/saveEditPA" method="POST" class="pAtivo-form" id="pAtivo-form" onsubmit="return confirm('Tem a certeza que deseja alterar a dose?')">
                 <label for="paSelector">Princípio ativo</label>
                 <select id="paSelector" name="principioAtivo"></select>
                 <label for="doseSelector">Dose</label>
                 <select id="doseSelector" name="dose"></select>
-                <hr />
-                <label for="doseMax">Dose Máxima</label>
-                <input type="number" name="doseMax" id="doseMax">
-                <label for="doseMin">Dose Mínima</label>
-                <input type="number" name="doseMin" id="doseMin">
-                <hr />
-                <button type="submit" id="saveButton">Guardar</button>
-                <button type="submit" id="removeButton">Remover</button>
-            
-            </form>
-        </div>
-    </div>
-
-    <script src="js/editPA.js"></script>
-</body>
-</html>

@@ -1,34 +1,45 @@
-<%- include('includes/head.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/main-styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/index-styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+        integrity="sha256-ECB9bbROLGm8wOoEbHcHRxlHgzGqYpDtNTgDTyDz0wg=" crossorigin="anonymous" />
+    
+</head>
 
 
 <body>
-    
+
     <div class="container">
         <hr />
-        <h1>Calculadora de posologias</h1>
+        <h1 class="menu-title">Calculadora de posologias</h1>
         <%- include('includes/navigation.ejs') %>
-        
 
 
-        <form class="form_centered" method="POST" action="/dose" id="formEscolha">
-            <label for="peso-crianca">Peso da criança</label>
-            <input type="text" name="pesoCrianca" placeholder="Peso em Kg">
-            <label for="paSelector">Princípio ativo</label>
-            <select id="paSelector" name="principioAtivo">
-                <% listaPrincipiosAtivos.forEach(pAtivo => { %>
-                <option><%= pAtivo %></option>
-                <% }) %>
-            </select>
+        <div class="form-centered-container">
+            <form class="form_centered" method="POST" action="/resultados" id="formEscolha">
+                <label for="peso-crianca">Peso da criança</label>
+                <input type="text" name="pesoCrianca" placeholder="Peso em Kg" required>
+                <label for="paSelector">Princípio ativo</label>
+                <select id="paSelector" name="principioAtivo"></select>
+                <select id="doseSelector" name="dose"></select>
 
 
-            <p>Calcula a dose para crianças até aos 12 anos de idade com peso igual ou inferior a 40 Kg.</p>
+                <p>Calcula a dose para crianças até aos 12 anos de idade com peso igual ou inferior a 40 Kg.</p>
 
 
-            <button type="submit">Continuar</button>
-        </form>
+                <button type="submit">Calcular</button>
+            </form>
+        </div>
 
 
     </div>
+<script src="js/main.js"></script>
 </body>
 
 </html>
